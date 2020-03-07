@@ -1,0 +1,130 @@
+<!doctype html>
+<title>Test JSON data activities</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function displayRecipes() {
+  // Our JSON data
+  var data = 
+    {
+      "recipes" : [
+        {
+          "recipename" : "Chocolate Cake",
+          "image" : "https://www.edamam.com/web-img/33e/33e894ef1df09575df1f8fdb348d6d9a.png",
+          "url" : "http://redcook.net/2010/06/16/garlic-scape-an-off-menu-treat/",
+          "yield" : "6",
+          "totalTime" : "30",
+          "calories" : "450",
+          "ingredients" : [
+            {
+              "ingname" : "Chocolate",
+              "quantity" : "30.232"
+            }, 
+            {
+              "ingname" : "Milk",
+              "quantity" : "100.2"
+            },
+            {
+              "ingname" : "Sugar",
+              "quantity" : "10.2"
+            }
+            ]
+        },
+        {
+          "recipename" : "Carrot Cake",
+          "image" : "https://www.edamam.com/web-img/33e/33e894ef1df09575df1f8fdb348d6d9a.png",
+          "url" : "http://redcook.net/2010/06/16/garlic-scape-an-off-menu-treat/",
+          "yield" : "3",
+          "totalTime" : "20",
+          "calories" : "450",
+          "ingredients" : [
+            {
+              "ingname" : "Chocolate",
+              "quantity" : "30.232"
+            }, 
+            {
+              "ingname" : "Milk",
+              "quantity" : "100.2"
+            },
+            {
+              "ingname" : "Sugar",
+              "quantity" : "10.2"
+            }
+            ]
+        },
+        {
+          "recipename" : "Cheese Cake",
+          "image" : "https://www.edamam.com/web-img/33e/33e894ef1df09575df1f8fdb348d6d9a.png",
+          "url" : "http://redcook.net/2010/06/16/garlic-scape-an-off-menu-treat/",
+          "yield" : "4",
+          "totalTime" : "45",
+          "calories" : "650",
+          "ingredients" : [
+            {
+              "ingname" : "Cheese",
+              "quantity" : "30.232"
+            }, 
+            {
+              "ingname" : "Milk",
+              "quantity" : "100.2"
+            },
+            {
+              "ingname" : "Sugar",
+              "quantity" : "10.2"
+            }
+            ]
+        }
+        ]
+      }
+  //
+  // create a table of the above data
+  //
+  var noRows = data.recipes.length;
+  console.log(noRows);
+  var noColumns = 6;
+  console.log(noColumns);
+              
+              var table_body = '<table border="1">';
+              for(var i=0; i<noRows; i++){
+                table_body+='<tr>';
+                //  table_body += '<td><a href=' + data.recipes[i].url + '>' + data.recipes[i].recipename + '</a></td>';
+                    table_body += "<td><a href='" + data.recipes[i].url + "'>" + data.recipes[i].recipename + "</a></td>";
+                    table_body += '<td>' + data.recipes[i].yield + '</td>';
+                    table_body += '<td>' + data.recipes[i].totalTime + '</td>';
+                    table_body += '<td>' + data.recipes[i].calories + '</td>';
+                    table_body += '<td>' + data.recipes[i].calories + '</td>';
+                    table_body += '<td>' + data.recipes[i].calories + '</td>';
+                table_body+='</tr>';
+              }
+                table_body+='</table>';
+               $('#tableDiv').html(table_body);
+    //
+    // Put the data into a variable and format with HTML tags
+    var output = "<h1>Recipes</h1>";
+    console.log("# of recipes: " + data.recipes.length)
+    // Loop through the recipes
+    for (var i in data.recipes) {
+        output += "<h3>" + data.recipes[i].recipename + "</h3>"; 
+        output += "<a href='" + data.recipes[i].url + "'>" + data.recipes[i].recipename + "</a>";
+        output += "<ul>";
+        
+        // Loop through the albums for the current artist
+        for (var j in data.recipes[i].ingredients) {
+          output += "<li>" + data.recipes[i].ingredients[j].ingname;
+          
+      }
+      output += "</ul>";
+    }
+    // Output the data to the "recipelist" element
+    document.getElementById("recipelist").innerHTML=output;
+        
+}    
+// Load the above function when the window loads
+window.onload = displayRecipes;
+</script>
+<!-- The output appears here -->
+<button id="getRecipes">Display Recipes</button>
+<div id="recipelist"></div>
+<div id="tableDiv" style="margin-top: 40px"> </div>
+</body>
+</html>
