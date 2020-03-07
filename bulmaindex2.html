@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>grocerlone</title>
+        <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="assets/myBulma.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <!-- Bulma Version 0.8.x-->
+        <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/hero.css">
+        <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+
+    </head>
+    <body>
+        <section class="hero is-info is-small is-bold">
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <a class="navbar-item" href="../">
+                            <!--- <img src="OUR LOGO URL HERE" alt="Logo"> -->
+                            </a>
+                            <span class="navbar-burger burger" data-target="navbarMenu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <div id="navbarMenu" class="navbar-menu">
+                            <div class="navbar-end">
+                                <div class="tabs is-right">
+                                    <ul>
+                                        <li class="is-active"><a>Home</a></li>
+                                        <li><a href="">My Grocery List</a></li>
+                                        <li><a href="">Modify Recipes</a></li>
+                                    </ul>
+                                   <!-- <span class="navbar-item">
+                                        <a class="button is-white is-outlined" href="https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/hero.html">
+                                            <span class="icon">
+                                                <i class="fa fa-github"></i>
+                                            </span>
+                                            <span title="Hello from the other side">View Source</span>-->
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">
+                    GROCERLONE!!!!
+                    </h1>
+                    <h2 class="subtitle">
+                    look at all them groceries you're gonna get. 
+                    </h2>
+                    <h3 class="subtitle is-6 has-text-weight-light">
+                        gonna have so many dang groceries
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- this is where the recipe may generate?-->
+    <div class="container box">
+        <div class="columns">
+                <div class="column is-half">
+                            <label class="label level-item">how much time do you have?</label>
+                            <p>
+                    <div class="buttons has-addons level-item is-mobile">
+                            <button class="button is-rounded" disabled>15 min</button>
+                            <button class="button is-rounded" disabled>20 min</button>
+                            <button class="button is-rounded" disabled>30 min</button>
+                            <button class="button is-rounded" disabled>60 min</button>
+                        </div>
+                </div>
+                <div class="column is-half">
+                        <div class="field is-mobile">
+                            <label class="label level-item">what are you lookin' for in a meal today?</label>
+                            <div class="control">
+                            <input class="input level-item is-rounded is-small" type="text" placeholder="ex: gluten-free, has chicken, low carb...">
+                        </div><p></p>
+                        <div class="control level-item">
+                            <button class="button level-item is-link" disabled>find my recipe!</button>
+                        </div>
+                </div>
+        </div>
+    </div></div>
+    <p></p>
+    <!-- this is the where the generated recipes display -->
+        <div class="container">
+        <div class="columns is-centered">
+            <div class="column box is-centered is-narrow">
+                        <div id="recipeResponse"></div>
+                        <div id="tableDiv" style="margin-top: 20px"> </div>
+            
+            </div>
+        </div>
+    </div>
+   <P></P>
+    <!--- this is where the active recipe list and active grocery list are -->
+    <div class="container box" style="margin-top: 20px">
+        <div class="columns">
+                <div id="activeRecipes" class="column is-half">
+                    <h1>this is my active recipe lists</h1>
+                </div>
+                <div id="activeGroceries" class="column is-half">
+                    <h1>this is my active grocery list</h1>
+                        </div><p></p>
+                        <div class="control level-item">
+                </div>
+        </div>
+    </div>
+    </div></div>
+
+
+
+
+
+
+            <script src="../js/bulma.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function displayRecipes() {
+  // Our JSON data
+  var data = 
+    {
+      "recipes" : [
+        {
+          "recipename" : "Chocolate Cake",
+          "image" : "https://www.edamam.com/web-img/33e/33e894ef1df09575df1f8fdb348d6d9a.png",
+          "url" : "http://redcook.net/2010/06/16/garlic-scape-an-off-menu-treat/",
+          "yield" : "6",
+          "totalTime" : "30",
+          "calories" : "450",
+          "ingredients" : [
+            {
+              "ingname" : "Chocolate",
+              "quantity" : "30.232"
+            }, 
+            {
+              "ingname" : "Milk",
+              "quantity" : "100.2"
+            },
+            {
+              "ingname" : "Sugar",
+              "quantity" : "10.2"
+            }
+            ]
+        },
+        {
+          "recipename" : "Carrot Cake",
+          "image" : "https://www.edamam.com/web-img/33e/33e894ef1df09575df1f8fdb348d6d9a.png",
+          "url" : "http://redcook.net/2010/06/16/garlic-scape-an-off-menu-treat/",
+          "yield" : "3",
+          "totalTime" : "20",
+          "calories" : "450",
+          "ingredients" : [
+            {
+              "ingname" : "Chocolate",
+              "quantity" : "30.232"
+            }, 
+            {
+              "ingname" : "Milk",
+              "quantity" : "100.2"
+            },
+            {
+              "ingname" : "Sugar",
+              "quantity" : "10.2"
+            }
+            ]
+        },
+        {
+          "recipename" : "Cheese Cake",
+          "image" : "https://www.edamam.com/web-img/33e/33e894ef1df09575df1f8fdb348d6d9a.png",
+          "url" : "http://redcook.net/2010/06/16/garlic-scape-an-off-menu-treat/",
+          "yield" : "4",
+          "totalTime" : "45",
+          "calories" : "650",
+          "ingredients" : [
+            {
+              "ingname" : "Cheese",
+              "quantity" : "30.232"
+            }, 
+            {
+              "ingname" : "Milk",
+              "quantity" : "100.2"
+            },
+            {
+              "ingname" : "Sugar",
+              "quantity" : "10.2"
+            }
+            ]
+        }
+        ]
+      }
+  //
+  // create a table of the above data
+  //
+  var noRows = data.recipes.length;
+  console.log(noRows);
+  var noColumns = 6;
+  console.log(noColumns);
+              
+              var table_body = '<table class="table is-narrow"><thead><tr><th><abbr title="Recipe">Recipe</abbr></th><th><abbr title="Servings">Servings</th><th><abbr title="Total Time">Total Time (mins)</th><th><abbr title="Calories">Calories</th>';
+              for(var i=0; i<noRows; i++){
+                table_body+='<tr>';
+                    table_body += "<td><a href='" + data.recipes[i].url + "'>" + data.recipes[i].recipename + "</a></td>";
+                    table_body += '<td>' + data.recipes[i].yield + '</td>';
+                    table_body += '<td>' + data.recipes[i].totalTime + '</td>';
+                    table_body += '<td>' + data.recipes[i].calories + '</td>';
+                    table_body += '<td><button id="thumbsUp"><i class="fa fa-thumbs-up" style="font-size:14px"></i></button></td>';
+                    table_body += '<td><button id="thumbsDown"><i class="fa fa-thumbs-down" style="font-size:14px"></i></button></td>';
+                table_body+='</tr>';
+              }
+                table_body+='</thead></table>';
+               $('#tableDiv').html(table_body);
+    //
+    // Put the data into a variable and format with HTML tags
+    var activeRecipes = document.querySelector("#activeRecipes");
+    var activeGroceries = document.querySelector("#activeGroceries");
+
+    var submitEl = document.querySelector("#thumbsUp");
+    var submissionResponseEl = document.querySelector("#recipeResponse");
+      
+      submitEl.addEventListener("click", function(event) {
+           event.preventDefault();
+           console.log(event);
+           var response = "Added to your list!";
+           submissionResponseEl.textContent = response;
+           
+      });
+
+      var submitE2 = document.querySelector("#thumbsDown");
+      var submissionResponseE2 = document.querySelector("#recipeResponse");
+      submitE2.addEventListener("click", function(event) {
+           event.preventDefault();
+           console.log(event);
+           var response = "Sorry you didn't like this one!";
+           submissionResponseEl.textContent = response;
+           
+      });
+
+
+    var output = "<h1>Recipes</h1>";
+    console.log("# of recipes: " + data.recipes.length)
+    // Loop through the recipes
+    for (var i in data.recipes) {
+        output += "<h3>" + data.recipes[i].recipename + "</h3>"; 
+        output += "<a href='" + data.recipes[i].url + "'>" + data.recipes[i].recipename + "</a>";
+        output += "<ul>";
+        
+        // Loop through the albums for the current artist
+        for (var j in data.recipes[i].ingredients) {
+          output += "<li>" + data.recipes[i].ingredients[j].ingname;
+          
+      }
+      output += "</ul>";
+    }
+    // Output the data to the "recipelist" element
+    document.getElementById("recipelist").innerHTML=output;
+
+        
+}    
+// Load the above function when the window loads
+window.onload = displayRecipes;
+</script>
+<!-- The output appears here -->
+
+        </footer>
+    </body>
+</html>
