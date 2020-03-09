@@ -1,341 +1,349 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>grocerlone</title>
-     <!--   <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon"> -->
-        <link rel="stylesheet" href="assets/myBulma.css"/>
-        <link rel="stylesheet" href="assets/style.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <!-- Bulma Version 0.8.x-->
-        <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
-     <!--   <link rel="stylesheet" type="text/css" href="../css/hero.css"> -->
-        <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
 
-    </head>
-    <body>
-        <section class="hero is-info is-small is-bold">
-            <div class="hero-head">
-                <nav class="navbar">
-                    <div class="container">
-                        <div class="navbar-brand">
-                            <a class="navbar-item" href="../">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>grocerlone</title>
+    <!--   <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon"> -->
+    <link rel="stylesheet" href="assets/myBulma.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.8.x-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
+    <!--   <link rel="stylesheet" type="text/css" href="../css/hero.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+
+</head>
+
+<body>
+    <section class="hero is-info is-small is-bold">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="../">
                             <!--- <img src="OUR LOGO URL HERE" alt="Logo"> -->
-                            </a>
-                            <span class="navbar-burger burger" data-target="navbarMenu">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
-                        </div>
-                        <div id="navbarMenu" class="navbar-menu">
-                            <div class="navbar-end">
-                                <div class="tabs is-right">
-                                    <ul>
-                                        <li class="is-active"><a>Home</a></li>
-                                        <li><a href="">My Grocery List</a></li>
-                                        <li><a href="">Modify Recipes</a></li>
-                                    </ul>
-                                   <!-- <span class="navbar-item">
+                        </a>
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <div class="tabs is-right">
+                                <ul>
+                                    <li class="is-active"><a>Home</a></li>
+                                    <li><a href="">My Grocery List</a></li>
+                                    <li><a href="">Modify Recipes</a></li>
+                                </ul>
+                                <!-- <span class="navbar-item">
                                         <a class="button is-white is-outlined" href="https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/hero.html">
                                             <span class="icon">
                                                 <i class="fa fa-github"></i>
                                             </span>
                                             <span title="Hello from the other side">View Source</span>-->
-                                        </a>
-                                    </span>
-                                </div>
+                                </a>
+                                </span>
                             </div>
                         </div>
                     </div>
-                </nav>
-            </div>
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <h1 class="title">
-                    grocerlONE
-                    </h1>
-                    <h2 class="subtitle">
-                    recipes to groceries 
-                    </h2>
-                    <h3 class="subtitle is-6 has-text-weight-light">
-                        
-                    </h3>
                 </div>
-            </div>
-        </section>
+            </nav>
+        </div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    grocerlONE
+                </h1>
+                <h2 class="subtitle">
+                    recipes to groceries
+                </h2>
+                <h3 class="subtitle is-6 has-text-weight-light">
 
-        <!-- this is where the recipe may generate?-->
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- this is where the recipe may generate?-->
     <div class="container box">
         <div class="columns">
-                <div class="column is-half">
-                            <label class="label level-item">how much time per recipe-minutes?</label>
-                            <p>
-                        <div class="buttons has-addons level-item is-mobile">
-                            <button id="timeButton" buttonValue="15" class="button is-rounded">15</button>
-                            <button id="timeButton" buttonValue="30" class="button is-rounded">30</button>
-                            <button id="timeButton" buttonValue="45" class="button is-rounded">45</button>
-                            <button id="timeButton" buttonValue="60" class="button is-rounded">60</button>
-                        </div>
+            <div class="column is-half">
+                <label class="label level-item">how much time per recipe-minutes?</label>
+                <p>
+                    <div class="buttons has-addons level-item is-mobile">
+                        <button id="timeButton" buttonValue="15" class="button is-rounded">15</button>
+                        <button id="timeButton" buttonValue="30" class="button is-rounded">30</button>
+                        <button id="timeButton" buttonValue="45" class="button is-rounded">45</button>
+                        <button id="timeButton" buttonValue="60" class="button is-rounded">60</button>
+                    </div>
+            </div>
+            <div class="column is-half">
+                <div class="field is-mobile">
+                    <label class="label level-item">what are you lookin' for in a meal today?</label>
+                    <div class="control">
+                        <input class="input level-item is-rounded is-small" type="text" id="queryText"
+                            placeholder="gluten-free, chicken, vegetarian, vegan">
+                    </div>
+                    <p></p>
+                    <div class="control level-item">
+                        <button id="searchInput" class="button level-item is-link">find my recipes!</button>
+                        <!--                                <button onclick="myFunction()" class="button level-item is-link">find my recipes!</button> -->
+                    </div>
                 </div>
-                <div class="column is-half">
-                        <div class="field is-mobile">
-                            <label class="label level-item">what are you lookin' for in a meal today?</label>
-                            <div class="control">
-                            <input class="input level-item is-rounded is-small" type="text" id="queryText" placeholder="gluten-free, chicken, vegetarian, vegan">
-                        </div><p></p>
-                        <div class="control level-item">
-                            <button id="searchInput" class="button level-item is-link">find my recipes!</button>
-<!--                                <button onclick="myFunction()" class="button level-item is-link">find my recipes!</button> -->
-                        </div>
-                </div>
+            </div>
         </div>
-    </div></div>
+    </div>
     <p></p>
     <!-- this is the where the generated recipes display -->
     <div class="container">
         <div class="columns is-centered">
             <div class="column box is-centered is-narrow">
-                        <div id="recipeResponse"></div>
-                        <div id="tableDiv" style="margin-top: 20px"> </div>
-            
+                <div id="recipeResponse"></div>
+                <div id="tableDiv" style="margin-top: 20px"> </div>
+
             </div>
         </div>
     </div>
-   <p></p>
+    <p></p>
 
     <!--- this is where the active recipe list and active grocery list are -->
-     <div class="container box" style="margin-top: 20px">
+    <div class="container box" style="margin-top: 20px">
         <div class="columns is-centered">
-                <div id="activeRecipes" class="column is-half">
-                     <h1>Selected Recipe List</h1>
-                    <div id="activetableDiv" style="margin-top: 20px"> </div>
-                </div>
-                <div id="activeGroceries" class="column is-half">
-                    <h1>Grocery List</h1>
-                    <div id="ingrtableDiv" style="margin-top: 20px"> </div>
-                </div><p></p>
-                <div class="control level-item"></div> 
+            <div id="activeRecipes" class="column is-half">
+                <h1>Selected Recipe List</h1>
+                <div id="activetableDiv" style="margin-top: 20px"> </div>
+            </div>
+            <div id="activeGroceries" class="column is-half">
+                <h1>Grocery List</h1>
+                <div id="ingrtableDiv" style="margin-top: 20px"> </div>
+            </div>
+            <p></p>
+            <div class="control level-item"></div>
         </div>
-    </div> 
-    </div></div>
+    </div>
+    </div>
+    </div>
 
-<!-- <script src="../js/bulma.js"></script> -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-//
-// build query
-//
-    function init() {
-      var timeValue = 0;
-      var searchTerm = "";
-      $(document).ready(function() {
-          if (document.getElementById("timeButton")) {
-             $("button").click(function() {
-             timeValue=$(this).attr("buttonValue");
-             console.log(timeValue); }
-          } else {
-            searchTerm = document.getElementById("queryText").value;
+    <!-- <script src="../js/bulma.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        //
+        // build query
+        //
+        function init() {
+            var timeValue = 0;
+            var searchTerm = "";
+            $("#searchInput").click(function () {
+                alert("Handler for recipe create button called.");
+                searchTerm = document.getElementById("queryText").value;
+                console.log(searchTerm);
+            });
+
+            $("#timeButton").click(function () {
+                alert("Time selected.");
+                timeValue = $(this).attr("buttonValue");
+                console.log(searchTerm);
+            });
+            console.log(timeValue);
             console.log(searchTerm);
-          }
-      });
-      }           
+        }
 
 
-             
 
-    } // end function findTime
-    // add ajax query
-    // save the object in local storage
-    // call displayRecipes
-    } // end function init
 
-//  --------------------------------------------------------------
-//
-// main function
-//
-// ------------------------------------------------------------------------------
-function displayRecipes() {
-   // read the locally stored query response and assign to data
-   var data = JSON.parse(localStorage.getItem("userData"));
-   console.log(data);
-   // nRecipes stores the number of the recipes returned by the query
-   var nRecipes = data.hits.length;
-   // activeRecipeArray stores the index of the selected recipes
-   var activeRecipeArray = [];
-   console.log("local storage data: " + nRecipes);
-//
-// display one row / recipe at a time
-// sets variable i = 0 - starting from the first recipe
-// present the first recipe to the user
-//
-    var i = 0;
 
-    oneRecipe();
-    //
-    // display one recipe at a time
-    // parameter is the index
-    // -----------------------------------------------------
-    function oneRecipe() {
-       console.log("array index: " + i);
-       var table_body = '<table class="table is-narrow"><thead><tr><th><abbr title="Recipe">Recipe</abbr></th><th><abbr title="Servings">Servings</th><th><abbr title="Total Time">Cook Time</th><th><abbr title="Calories">Calories</th>';
+        // add ajax query
+        // save the object in local storage
+        // call displayRecipes
+        // end function init
 
-       table_body+='<tr>';
-       table_body += "<td><a href='" + data.hits[i].recipe.url + "'>" + data.hits[i].recipe.label + "</a></td>";
-       table_body += '<td>' + data.hits[i].recipe.yield + '</td>';
-       table_body += '<td>' + data.hits[i].recipe.totalTime + '</td>';
-       table_body += '<td>' + (data.hits[i].recipe.calories).toFixed(0) + '</td>';
-       table_body += '<td><button id="thumbsUp" color="green"><i id="up" class="fa fa-thumbs-up" style="font-size:14px"></i></button></td>';
-       table_body += '<td><button id="thumbsDown"><i id="down" class="fa fa-thumbs-down" style="font-size:14px" color="orange"></i></button></td>';
-       table_body+='</tr>';
-       table_body+='</thead></table>';
-       //
-       //display the table in elementID = tableDiv
-       //
-       $('#tableDiv').html(table_body);
-    } 
-    // -------------------------------------------------------
-    // end function oneRecipe
-    //
-    //
-    // render active recipe list
-    // -------------------------------------------------------
-    function activeRecipeList() {
-       // length of the active recipe array
-       var noActiveRecipeArray = activeRecipeArray.length;
-       console.log("Active recipe list: " + noActiveRecipeArray);
-       var acttable_body = '<table class="table is-narrow" id="tableData" data-col="no"><thead><tr><th><abbr title="Number">No</abbr></th><th><abbr title="Recipe">Recipe</abbr></th><th><abbr title="Servings">Servings</th><th><abbr title="Total Time">Cook Time</th><th><abbr title="Calories">Calories</th>';
-       for (var k=0; k < noActiveRecipeArray; k++) {
-          var j = activeRecipeArray[k];
-          // console.log("No " + k + " selected recipe is " + j);
-          acttable_body +='<tr>';
-            acttable_body += '<td data-col="no">' + parseInt(k+1) + '</td>';
-            acttable_body += "<td><a href='" + data.hits[j].recipe.url + "'>" + data.hits[j].recipe.label + "</a></td>";
-            acttable_body += '<td>' + data.hits[j].recipe.yield + '</td>';
-            acttable_body += '<td>' + data.hits[j].recipe.totalTime + '</td>';
-            acttable_body += '<td>' + (data.hits[j].recipe.calories).toFixed(0) + '</td>';
-        //    acttable_body += '<td><button class="theButton" id="thumbsDown2"><i id="down1" class="fa fa-thumbs-down" style="font-size:14px"></i></button></td>';
-            acttable_body += '<td><button class="theButton" id="thumbsDown2"><i id="downx' + k + ' " ' + 'class="fa fa-thumbs-down" style="font-size:14px"></i></button></td>';
-            acttable_body +='</tr>';
-//
-//display the table in elementID = activeRecipes
-//
-        
-        } // end of for loop
-        acttable_body+='</thead></table>';
-        $('#activetableDiv').html(acttable_body);
-        ingredientList();
-    } // end function activeRecipes
-//  --------------------------------------------------------------
-//
-//
-      // start ingredient calculations
-      // ----------------------------------------
-      function ingredientList() {
-       // length of the active recipe array - number of recipes
-       var noActiveRecipeArray = activeRecipeArray.length;
-       console.log("Active recipe list: " + noActiveRecipeArray);
-       var cumIngrlist = 0;
-     //
-     var ingtable_body = '<table class="table is-narrow" id="tableData" data-col="no"><thead><tr><th><abbr title="Number">No</abbr></th><th><abbr title="Ingredient">Item Description</abbr></th><th><abbr title="Amount">Quantity (gms)</th>';
-       for (var k=0; k < noActiveRecipeArray; k++) {
-          var j = activeRecipeArray[k];
-          // console.log("No " + k + " selected recipe is " + j);
-          // for each selected recipe - loop thru the ingredient list
-          var numIngr = data.hits[j].recipe.ingredients.length;
-          console.log(j + " Recipe Ingredients: " + numIngr);
-          for (var l=0; l<numIngr; l++) { 
-            ingtable_body +='<tr>';
-            cumIngrlist = cumIngrlist + 1;
-            ingtable_body += '<td data-col="no">' + parseInt(cumIngrlist) + '</td>';
-            ingtable_body += '<td>' + data.hits[j].recipe.ingredients[l].text + '</td>';
-            var w = data.hits[j].recipe.ingredients[l].weight;
-            w = w.toFixed(0);
-          //  console.log(data.hits[0].recipe.ingredients[k].text + ", Weight " + w.toFixed(0));
-            ingtable_body += '<td>' + w + '</td>';
-            ingtable_body +='</tr>';
-            } // end of ingredient loop
-        
-        } // end of for loop
-        ingtable_body+='</thead></table>';
-        $('#ingrtableDiv').html(ingtable_body);
-
-    } // end function ingredientsList
-      // ----------------------------------------------------------
-      // listens to all "clicks"
-      // checks if the click id = up or down
-      // if up then
-      //    store the index of the recipe from the original object array
-      //    add the chosen (up) recipe to active recipe list
-      //    show the next recipe for the user to either "up" or "down"
-      //
-      document.addEventListener("click", function(event) {
-        console.log(event.target.id);
-        // 
-        // thumbs up click event - initial recipe selection process
+        //  --------------------------------------------------------------
         //
-        if (event.target.id == "up") {
-            console.log("thumbs up clicked");
-            event.preventDefault();
-            activeRecipeArray.push(i);
-            console.log(activeRecipeArray);
-            activeRecipeList();
-            if (i < nRecipes-1) {
-              i++;
-              oneRecipe(i);
-            } else {
-              alert("end of recipe list");
+        // main function
+        //
+        // ------------------------------------------------------------------------------
+        function displayRecipes() {
+            // read the locally stored query response and assign to data
+            var data = JSON.parse(localStorage.getItem("userData"));
+            console.log(data);
+            // nRecipes stores the number of the recipes returned by the query
+            var nRecipes = data.hits.length;
+            // activeRecipeArray stores the index of the selected recipes
+            var activeRecipeArray = [];
+            console.log("local storage data: " + nRecipes);
+            //
+            // display one row / recipe at a time
+            // sets variable i = 0 - starting from the first recipe
+            // present the first recipe to the user
+            //
+            var i = 0;
+
+            oneRecipe();
+            //
+            // display one recipe at a time
+            // parameter is the index
+            // -----------------------------------------------------
+            function oneRecipe() {
+                console.log("array index: " + i);
+                var table_body = '<table class="table is-narrow"><thead><tr><th><abbr title="Recipe">Recipe</abbr></th><th><abbr title="Servings">Servings</th><th><abbr title="Total Time">Cook Time</th><th><abbr title="Calories">Calories</th>';
+
+                table_body += '<tr>';
+                table_body += "<td><a href='" + data.hits[i].recipe.url + "'>" + data.hits[i].recipe.label + "</a></td>";
+                table_body += '<td>' + data.hits[i].recipe.yield + '</td>';
+                table_body += '<td>' + data.hits[i].recipe.totalTime + '</td>';
+                table_body += '<td>' + (data.hits[i].recipe.calories).toFixed(0) + '</td>';
+                table_body += '<td><button id="thumbsUp" color="green"><i id="up" class="fa fa-thumbs-up" style="font-size:14px"></i></button></td>';
+                table_body += '<td><button id="thumbsDown"><i id="down" class="fa fa-thumbs-down" style="font-size:14px" color="orange"></i></button></td>';
+                table_body += '</tr>';
+                table_body += '</thead></table>';
+                //
+                //display the table in elementID = tableDiv
+                //
+                $('#tableDiv').html(table_body);
             }
-        // 
-        // thumbs down click event - initial recipe selection process
-        //
-        } else if (event.target.id == "down") {
-            event.preventDefault();
-            if (i < nRecipes-1) {
-              i++;
-              oneRecipe(i);
-           } else {
-               alert("end of recipe list");
-           }
-        //
-        // thumbs down click event - from the selected recipe list
-        //
-        }  else if ((event.target.id).substring(0,5) == "downx") 
-           {
-            var xtemp = parseInt((event.target.id).substring(5,8))
-            console.log("Index No : " + xtemp);
-            console.log("Active Recipes before: " + activeRecipeArray);
-            activeRecipeArray.splice(xtemp,1)
-            console.log("Active Recipes after: " + activeRecipeArray);
-            activeRecipeList();
-            ingredientList();
-           } else  if (event.target.id == "timeButton") {
-            console.log("Time button clicked");
-           } else  if (event.target.id == "searchInput") {
-            console.log("Search Input clicked");
-           }
+            // -------------------------------------------------------
+            // end function oneRecipe
+            //
+            //
+            // render active recipe list
+            // -------------------------------------------------------
+            function activeRecipeList() {
+                // length of the active recipe array
+                var noActiveRecipeArray = activeRecipeArray.length;
+                console.log("Active recipe list: " + noActiveRecipeArray);
+                var acttable_body = '<table class="table is-narrow" id="tableData" data-col="no"><thead><tr><th><abbr title="Number">No</abbr></th><th><abbr title="Recipe">Recipe</abbr></th><th><abbr title="Servings">Servings</th><th><abbr title="Total Time">Cook Time</th><th><abbr title="Calories">Calories</th>';
+                for (var k = 0; k < noActiveRecipeArray; k++) {
+                    var j = activeRecipeArray[k];
+                    // console.log("No " + k + " selected recipe is " + j);
+                    acttable_body += '<tr>';
+                    acttable_body += '<td data-col="no">' + parseInt(k + 1) + '</td>';
+                    acttable_body += "<td><a href='" + data.hits[j].recipe.url + "'>" + data.hits[j].recipe.label + "</a></td>";
+                    acttable_body += '<td>' + data.hits[j].recipe.yield + '</td>';
+                    acttable_body += '<td>' + data.hits[j].recipe.totalTime + '</td>';
+                    acttable_body += '<td>' + (data.hits[j].recipe.calories).toFixed(0) + '</td>';
+                    //    acttable_body += '<td><button class="theButton" id="thumbsDown2"><i id="down1" class="fa fa-thumbs-down" style="font-size:14px"></i></button></td>';
+                    acttable_body += '<td><button class="theButton" id="thumbsDown2"><i id="downx' + k + ' " ' + 'class="fa fa-thumbs-down" style="font-size:14px"></i></button></td>';
+                    acttable_body += '</tr>';
+                    //
+                    //display the table in elementID = activeRecipes
+                    //
 
-      });
-      // ----------------------------------------
-      // end click event handler (for all clicks)
-      // 
+                } // end of for loop
+                acttable_body += '</thead></table>';
+                $('#activetableDiv').html(acttable_body);
+                ingredientList();
+            } // end function activeRecipes
+            //  --------------------------------------------------------------
+            //
+            //
+            // start ingredient calculations
+            // ----------------------------------------
+            function ingredientList() {
+                // length of the active recipe array - number of recipes
+                var noActiveRecipeArray = activeRecipeArray.length;
+                console.log("Active recipe list: " + noActiveRecipeArray);
+                var cumIngrlist = 0;
+                //
+                var ingtable_body = '<table class="table is-narrow" id="tableData" data-col="no"><thead><tr><th><abbr title="Number">No</abbr></th><th><abbr title="Ingredient">Item Description</abbr></th><th><abbr title="Amount">Quantity (gms)</th>';
+                for (var k = 0; k < noActiveRecipeArray; k++) {
+                    var j = activeRecipeArray[k];
+                    // console.log("No " + k + " selected recipe is " + j);
+                    // for each selected recipe - loop thru the ingredient list
+                    var numIngr = data.hits[j].recipe.ingredients.length;
+                    console.log(j + " Recipe Ingredients: " + numIngr);
+                    for (var l = 0; l < numIngr; l++) {
+                        ingtable_body += '<tr>';
+                        cumIngrlist = cumIngrlist + 1;
+                        ingtable_body += '<td data-col="no">' + parseInt(cumIngrlist) + '</td>';
+                        ingtable_body += '<td>' + data.hits[j].recipe.ingredients[l].text + '</td>';
+                        var w = data.hits[j].recipe.ingredients[l].weight;
+                        w = w.toFixed(0);
+                        //  console.log(data.hits[0].recipe.ingredients[k].text + ", Weight " + w.toFixed(0));
+                        ingtable_body += '<td>' + w + '</td>';
+                        ingtable_body += '</tr>';
+                    } // end of ingredient loop
 
-      // 
-      //
-}   // end of displayRecipes 
-//
-// Load the above function when the window loads
-//
-// window.onload = displayRecipes;
-// window.onload = findRecipes;
-window.onload = init;
-</script>
+                } // end of for loop
+                ingtable_body += '</thead></table>';
+                $('#ingrtableDiv').html(ingtable_body);
 
- </body>
+            } // end function ingredientsList
+            // ----------------------------------------------------------
+            // listens to all "clicks"
+            // checks if the click id = up or down
+            // if up then
+            //    store the index of the recipe from the original object array
+            //    add the chosen (up) recipe to active recipe list
+            //    show the next recipe for the user to either "up" or "down"
+            //
+            document.addEventListener("click", function (event) {
+                console.log(event.target.id);
+                // 
+                // thumbs up click event - initial recipe selection process
+                //
+                if (event.target.id == "up") {
+                    console.log("thumbs up clicked");
+                    event.preventDefault();
+                    activeRecipeArray.push(i);
+                    console.log(activeRecipeArray);
+                    activeRecipeList();
+                    if (i < nRecipes - 1) {
+                        i++;
+                        oneRecipe(i);
+                    } else {
+                        alert("end of recipe list");
+                    }
+                    // 
+                    // thumbs down click event - initial recipe selection process
+                    //
+                } else if (event.target.id == "down") {
+                    event.preventDefault();
+                    if (i < nRecipes - 1) {
+                        i++;
+                        oneRecipe(i);
+                    } else {
+                        alert("end of recipe list");
+                    }
+                    //
+                    // thumbs down click event - from the selected recipe list
+                    //
+                } else if ((event.target.id).substring(0, 5) == "downx") {
+                    var xtemp = parseInt((event.target.id).substring(5, 8))
+                    console.log("Index No : " + xtemp);
+                    console.log("Active Recipes before: " + activeRecipeArray);
+                    activeRecipeArray.splice(xtemp, 1)
+                    console.log("Active Recipes after: " + activeRecipeArray);
+                    activeRecipeList();
+                    ingredientList();
+                } else if (event.target.id == "timeButton") {
+                    console.log("Time button clicked");
+                } else if (event.target.id == "searchInput") {
+                    console.log("Search Input clicked");
+                }
+
+            });
+            // ----------------------------------------
+            // end click event handler (for all clicks)
+            // 
+
+            // 
+            //
+        }   // end of displayRecipes 
+        //
+        // Load the above function when the window loads
+        //
+        $(document).ready(init);
+    </script>
+
+</body>
+
 </html>
