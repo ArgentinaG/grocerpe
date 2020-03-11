@@ -60,10 +60,10 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">
-                    grocerlONE
+                    grocerpē
                 </h1>
                 <h2 class="subtitle">
-                    recipes to groceries
+                    turning dreams (and recipes) into groceries
                 </h2>
                 <h3 class="subtitle is-6 has-text-weight-light">
 
@@ -76,7 +76,7 @@
     <div class="container box">
         <div class="columns">
             <div class="column is-half">
-                <label class="label level-item">how much time per recipe-minutes?</label>
+                <label class="label level-item">how much time do you have?</label>
                 <p>
                     <div class="buttons has-addons level-item is-mobile">
                         <button buttonValue="15" class="button is-rounded buttonClass">15</button>
@@ -105,11 +105,15 @@
     <!-- this is the where the generated recipes display -->
     <div class="container">
         <div class="columns is-centered">
-            <div class="column box is-centered is-narrow">
+            <div class="column  is-centered is-narrow" id="recipePhotoDiv">
+            </div>
+        <div class="column is-centered is-narrow" id="recipeAttributeDiv">
+            </div>
+        <!--    <div class="column box is-centered is-narrow">
                 <div id="recipeResponse"></div>
                 <div id="tableDiv" style="margin-top: 20px"> </div>
 
-            </div>
+            </div> -->
         </div>
     </div>
     <p></p>
@@ -167,7 +171,7 @@
         // end function init
         function myQuery(t, s) {
             console.log("inside myquery: " + t + "search: " + s);
-           //  var maxTime = 15;
+            //  var maxTime = 15;
             var numIngr = 5;
             var numRecipes = 50;
             // var searchTerm = "balanced";
@@ -190,24 +194,24 @@
                     console.log("# of recipes: " + response.hits.length);
                     localStorage.setItem("userData", JSON.stringify(response));
                     //
-                /*    var userData2 = JSON.parse(localStorage.getItem("userData"));
-                    console.log("local storage data: " + userData2.hits.length);
-
-                    var inputRecipes = {};
-                    var nRecipes = response.hits.length;
-                    var link = $("<a>");
-                    link.attr("href", response.hits[0].recipe.url);
-                    link.attr("title", response.hits[0].recipe.label);
-                    link.text(response.hits[0].recipe.label);
-                    $(".link").html(link);
-                    console.log(response);
-                    //  $(".title").text("Recipe: " + response.hits[0].recipe.label);
-                    $(".img").attr("src", response.hits[0].recipe.image);
-                    $(".yield").text("Serves: " + response.hits[0].recipe.yield);
-                    $(".ingredients").text(response.hits[0].recipe.ingredientLines);
-                    $(".recipe").attr("src", response.hits[0].recipe.url); */
+                    /*    var userData2 = JSON.parse(localStorage.getItem("userData"));
+                        console.log("local storage data: " + userData2.hits.length);
+    
+                        var inputRecipes = {};
+                        var nRecipes = response.hits.length;
+                        var link = $("<a>");
+                        link.attr("href", response.hits[0].recipe.url);
+                        link.attr("title", response.hits[0].recipe.label);
+                        link.text(response.hits[0].recipe.label);
+                        $(".link").html(link);
+                        console.log(response);
+                        //  $(".title").text("Recipe: " + response.hits[0].recipe.label);
+                        $(".img").attr("src", response.hits[0].recipe.image);
+                        $(".yield").text("Serves: " + response.hits[0].recipe.yield);
+                        $(".ingredients").text(response.hits[0].recipe.ingredientLines);
+                        $(".recipe").attr("src", response.hits[0].recipe.url); */
                     displayRecipes();
-                }); 
+                });
         }
         //  --------------------------------------------------------------
         //
@@ -237,10 +241,12 @@
             // -----------------------------------------------------
             function oneRecipe() {
                 console.log("array index: " + i);
+                var image_body = '<figure class="image is-128x128"><img src="' + data.hits[i].recipe.image + '">'
+                $('#recipePhotoDiv').html(image_body);
                 var table_body = '<table class="table is-narrow"><thead><tr><th><abbr title="Recipe">Recipe</abbr></th><th><abbr title="Servings">Servings</th><th><abbr title="Total Time">Cook Time</th><th><abbr title="Calories">Calories</th>';
 
                 table_body += '<tr>';
-                table_body += "<td><a href='" + data.hits[i].recipe.url + "'>" + data.hits[i].recipe.label + "</a></td>";
+                table_body += '<td><a href="' + data.hits[i].recipe.url + '"' + 'target="_blank" >' + data.hits[i].recipe.label + '</a></td>';
                 table_body += '<td>' + data.hits[i].recipe.yield + '</td>';
                 table_body += '<td>' + data.hits[i].recipe.totalTime + '</td>';
                 table_body += '<td>' + (data.hits[i].recipe.calories).toFixed(0) + '</td>';
@@ -251,7 +257,8 @@
                 //
                 //display the table in elementID = tableDiv
                 //
-                $('#tableDiv').html(table_body);
+                $('#recipeAttributeDiv').html(table_body);
+            //    $('#tableDiv').html(table_body);
             }
             // -------------------------------------------------------
             // end function oneRecipe
