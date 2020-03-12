@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX API Testing</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container"> <!-- container-->
+
+<!-- 
+</div> 
+<div class="container"> -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h3 id="forecastTitle">grocerlONE</h3> <!-- forecastTitle id will be used to write 5-day forecast for city and state name using jQuery-->
+    </div>
+  </div> <!--div close of jumbotron-->
+
+
+</div> <!--div close of container-->
+
+
+<div class="card-body text-center">
+<!--  <h1 class="title"></h1> -->
+  <p class="link"></p>
+  <img class="img" />
+  <p class="yield"></p>
+  <p class="ingredients"></p>
+  <p class="recipe"></p>
+</div>
+
+ <!-- script -->
+<script type="text/javascript">
+var type = $(this).attr("data-type");
+// var queryURL = "http://api.edamam.com/search?q=vegan&app_id=e7fa66db&app_key=2a2c5a8700acb772d1556db99f8cfa3b";
+var queryURL = "http://api.edamam.com/search?q=vegetarian&from=0&to=19&time=10-60&app_id=e7fa66db&app_key=2a2c5a8700acb772d1556db99f8cfa3b";
+console.log(queryURL);
+
+// Grabbing our API results
+$.ajax({
+    url: queryURL,
+    method: "GET",
+  })
+    .then (function(response) {
+      console.log("# of recipes: " + response.hits.length);
+      localStorage.setItem("userData", JSON.stringify(response));
+      //
+      var userData2 = JSON.parse(localStorage.getItem("userData"));
+      console.log("local storage data: " + userData2.hits.length);
+      // set number of recipes returned to "nRecipes"
+      // assign recipe info to arrays
+      /* inputRecipes - JSON object 
+         "inputRecipes" : [ 
+                            {recipe: "name of the recipe",
+                            image: "image url",
+                            serves: "yield",
+                            cooktime: "cooking time",
+                            url: "recipe url",
+                            calories: "total calories",
+                            ingredients: [ {ingredient: "1st ingredient",
+                                            quantity: "quantity"},
+                                           {ingredient: "2nd ingredient",
+                                            quantity: "quantity"}
+                                          ]
+                            },
+                            {recipe: "name of the recipe",
+                            image: "image url",
+                            serves: "yield",
+                            cooktime: "cooking time",
+                            url: "recipe url",
+                            calories: "total calories",
+                            ingredients: [ {ingredient: "1st ingredient",
+                                            quantity: "quantity"},
+                                           {ingredient: "2nd ingredient",
+                                            quantity: "quantity"}
+                                          ]
+                            }
+                          ]
+                         
+      */
+      var inputRecipes = {};
+      var nRecipes = response.hits.length;
+      var link = $("<a>");
+        link.attr("href", response.hits[0].recipe.url);
+        link.attr("title", response.hits[0].recipe.label);
+        link.text(response.hits[0].recipe.label);
+        $(".link").html(link);
+      console.log(response);
+    //  $(".title").text("Recipe: " + response.hits[0].recipe.label);
+      $(".img").attr("src", response.hits[0].recipe.image);
+      $(".yield").text("Serves: "+ response.hits[0].recipe.yield);
+      $(".ingredients").text(response.hits[0].recipe.ingredientLines);
+      $(".recipe").attr("src", response.hits[0].recipe.url);
+    //
+    // assign the response data into local variables
+    //
+
+  });
+  
+
+
+  </script>
+</body>
+
+</html>
